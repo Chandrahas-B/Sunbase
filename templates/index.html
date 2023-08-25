@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction</title>
+    <style>
+        #form-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id=  "form-container">
+    <form method="POST">
+        <div>
+            <label for='age'> Age:
+            <input type="number" name="age" min=17 max= 80 required placeholder="17-80"></label>
+        </div> <br/>
+        <div>
+            <label for='gender'> Gender:
+            <input type="text" name="gender" required placeholder="Male/Female"></label>
+        </div><br/>
+        <div>
+            <label for='location'> Location:
+            <input type="text" name="location" required placeholder="Los Angeles/Chicago/Houston/Miami/New York"></label>
+        </div><br/>
+        <div>
+            <label for='subscription'> Total subscription length:
+            <input type="number" name="subscription" min=1 max= 24 required placeholder="1-24" step=0.1></label>
+        </div><br/>
+        <div>
+            <label for='monthlyBill'> Monthly Bill:
+            <input type="number" name="monthlyBill" min=30 max= 100 required placeholder="30-100" step=0.1></label>
+        </div><br/>
+        <div>
+            <label for='totalGB'> Total GB used:
+            <input type="number" name="totalGB" min=50 max= 500 required placeholder="50-500" step=0.1></label>
+        </div><br/>
+        <div>
+            <input type="submit" name="submit" required value="Submit">
+        </div>
+    </form>
+    </div>
+    <br/><br/>
+    {% if pred== 0 or pred == 1 %}
+        <center><b><div> 
+            Churn Prediction: {{pred}}
+        </div></b></center>
+    {% endif %}
+</body>
+</html>
